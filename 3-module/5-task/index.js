@@ -4,5 +4,18 @@
  * @returns {{min:number, max:number}}  объект
  */
 function getMinMax(str) {
-  // ваш код...
+  let replacedStr = str.replaceAll(',', ' ');
+  
+  let arrFromString = replacedStr.split(' ');
+  
+  let numbers = arrFromString.map(num => parseFloat(num) || false);
+  
+  let numMin = Math.min(...numbers);
+  let numMax = Math.max(...numbers);
+  
+  let minMax = {
+   min: numMin, max: numMax
+  }
+  
+  return minMax;
 }
