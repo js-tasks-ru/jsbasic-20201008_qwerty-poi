@@ -1,7 +1,7 @@
 function hideSelf() {
   document.addEventListener('click', function(event) {
-    let id = event.target.className = 'hide-self-button';
-    if (!id) return;
+    let button = event.target;
+    if (!button.classList.contains('hide-self-button')) return;
 
     let elem = document.querySelector('.hide-self-button');
     elem.hidden = "true";
