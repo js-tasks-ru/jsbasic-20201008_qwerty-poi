@@ -8,7 +8,6 @@ function makeFriendsList(friends) {
   let ul = document.querySelector('ul');
   
   for (let elem of friends) {
-    console.log(`${elem.firstName} ${elem.lastName}`);
     ul.innerHTML += `<li>${elem.firstName} ${elem.lastName}</li>`;
   }
 }
