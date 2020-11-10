@@ -3,18 +3,20 @@
  * @param {Element} table
  */
 function highlight(table) {
-    let rows = table[0].tBodies[0].rows;
+    let rows = table.rows;
     
     for (let row of rows) {
       switch(row.cells[3].dataset.available) {
         case 'true':
-          row.className = "available";
+          row.classList.add('available');
+          //row.className = "available";
           break;
         case 'false':
-          row.className = "unavailable";
+          row.classList.add('unavailable');
+          //row.className = "unavailable";
           break;
         default:
-          row.setAttribute('hidden', true) = "unavailable";
+          row.setAttribute('hidden', true);
       }
   
       switch(row.cells[2].innerHTML) {
@@ -26,7 +28,7 @@ function highlight(table) {
       }
       
       if (+row.cells[1].innerHTML < 18) {
-        row.style.textDecoration = 'line-through'
+        row.style.textDecoration = 'line-through';
       }
     }
   }

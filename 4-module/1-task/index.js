@@ -4,10 +4,12 @@
  * @return {HTMLUListElement}
  */
 function makeFriendsList(friends) {
-  document.body.innerHTML = '<ul></ul>';
-  let ul = document.querySelector('ul');
+  
+  let ul = document.createElement('ul');
   
   for (let elem of friends) {
     ul.innerHTML += `<li>${elem.firstName} ${elem.lastName}</li>`;
   }
+
+  return ul;
 }
