@@ -37,7 +37,6 @@ export default class Carousel {
     }
 
     let carouselInnerWidth = carouselInner.offsetWidth;
-    console.log(carouselInnerWidth);
     let arrowLeft = this.elem.querySelector('.carousel__arrow_left');
     let arrowRight = this.elem.querySelector('.carousel__arrow_right');
     let step = 0;
