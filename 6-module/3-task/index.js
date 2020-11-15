@@ -36,7 +36,6 @@ export default class Carousel {
       carouselInner.insertAdjacentElement('beforeend', slide);   
     }
 
-    let carouselInnerWidth = carouselInner.offsetWidth;
     let arrowLeft = this.elem.querySelector('.carousel__arrow_left');
     let arrowRight = this.elem.querySelector('.carousel__arrow_right');
     let step = 0;
@@ -46,6 +45,7 @@ export default class Carousel {
   
     this.elem.addEventListener('click', function(event) {
       let arrow = event.target;
+      let carouselInnerWidth = carouselInner.offsetWidth;
   
       if (arrow.closest('.carousel__arrow_right')) { 
         step++;  
@@ -72,7 +72,7 @@ export default class Carousel {
       }
     });
 
-    carouselInner.addEventListener('click', () => {
+    carouselInner.addEventListener('click', (event) => {
       let target = event.target;
       if (!target.closest('.carousel__slide')) return;
       let carouselSlide = target.closest('.carousel__slide');
